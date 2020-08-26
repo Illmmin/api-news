@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+        
+
+  <ul class="collection">
+    {% for sources in topics %}
+    <a href={{ path ('source',{source_name: sources.id})}} >
+    <li class="collection-item avatar">
+      <i class="material-icons circle teal">send</i>
+      <span class="title">{{ sources.name }}</span>
+      <p>{{ sources.description }}<br>
+         Catégorie {{ sources.category | upper }}
+      </p>
+    </li>
+    </a>
+                
+                
+                
+            {% endfor %}
+    
+    
+  </ul>
+            
+
+            
+
+
+
+        {% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <meta charset="UTF-8">
+        <title>{% block title %}Newspage{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+
+
+  <nav>
+    <div class="nav-wrapper teal darken-2">
+    
+      <a href={{path('homepage')}} class="brand-logo">Newspage</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {% if is_granted('ROLE_USER') %}
+          <li><a href="#!">{{app.user.username}}</a></li>
+          <li><a href={{ logout_path(key = null) }}>Déconnexion</a></li>
+        
+      {% else %}
+        <li><a href={{ path('app_login')}}>Connexion</a></li>
+        <li><a href= {{ path('app_register')}}>Inscription</a></li>
+      {% endif %}
+      
+      </ul>
+    </div>
+  </nav>
+
+{% block content %}
+{% endblock %}
+
+        <footer class="page-footer teal darken-2">
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright Text
+            </div>
+          </div>
+        </footer>
+            
+
+</html>
+        
+    

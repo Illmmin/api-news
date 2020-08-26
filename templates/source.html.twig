@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<ul class="collection">
+    <li class="collection-item avatar title">
+    </li>
+    {% for sources in topics %}
+    <a href={{ sources.url}} > 
+    <li class="collection-item avatar">
+      <span><img class="circle" src={{sources.urlToImage}} alt="image"/></span> 
+      <span class="title">{{ sources.title }}</span>
+      <p>{{ sources.publishedAt }}<br>
+      </p>
+
+
+        
+      </br>
+    </li>
+    </a>
+    
+    {% endfor %}    
+  </ul>
+
+  {% endblock %}
+            
